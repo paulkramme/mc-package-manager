@@ -1,0 +1,12 @@
+{"package":[
+	{
+	"name":"optifine",
+	"version":"Optifine 1.10.2 HD U C2",
+	"download":"http://optifine.net/adloadx?f=OptiFine_1.10.2_HD_U_C2.jar"
+	},
+	{
+	"name":"toomanyitems",
+	"version":"1.8",
+	"download":"http://marglyph.s3.amazonaws.com/TooManyItems2014_09_07_1.8.zip"
+	}
+]
