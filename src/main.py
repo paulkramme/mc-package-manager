@@ -8,26 +8,15 @@ if len(sys.argv) > 1 and len(sys.argv) < 5:
 	if sys.argv[1] == "install":
 		#iterating through mod list
 		print("Installing...")
-		if os.path.isfile("pkglist.json") == True:
+		if os.path.isfile("pkglist.csv") == True:
 			pass
 		else:
-			print("Package list not found. Run diggedigdi update.")
-
-		with open("pkglist.json") as packagelist:
-			jsondata = json.load(packagelist)
-			"""
-			if jsondata["package"][0]["name"] == sys.argv[2]:
-				print("Install Package " + sys.argv[2])
-			else:
-				print("Package not found. Change me.")
-				print("Y U Not WORKING?!")
-			"""
-			while jsondata["package"][0]["name"] != sys.argv[2]:
-				print(jsondata["package"][0]["name"])
+			print("Package list not found. Do something")
+		#load csv
 	elif sys.argv[1] == "update":
 		#look for changes in the package list
 		print("Updating...")
-		if os.path.isfile("pkglist.json") == True:
+		if os.path.isfile("pkglist.csv") == True:
 			pass
 		else:
 			#download package list...
