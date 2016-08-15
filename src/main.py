@@ -2,7 +2,6 @@
 import sys
 import json
 import os.path
-#from pprint import pprint
 
 print("MC Package Manager")
 if len(sys.argv) > 1 and len(sys.argv) < 5:
@@ -16,8 +15,15 @@ if len(sys.argv) > 1 and len(sys.argv) < 5:
 
 		with open("pkglist.json") as packagelist:
 			jsondata = json.load(packagelist)
-			#pprint(jsondata)
-
+			"""
+			if jsondata["package"][0]["name"] == sys.argv[2]:
+				print("Install Package " + sys.argv[2])
+			else:
+				print("Package not found. Change me.")
+				print("Y U Not WORKING?!")
+			"""
+			while jsondata["package"][0]["name"] != sys.argv[2]:
+				print(jsondata["package"][0]["name"])
 	elif sys.argv[1] == "update":
 		#look for changes in the package list
 		print("Updating...")
@@ -33,3 +39,4 @@ if len(sys.argv) > 1 and len(sys.argv) < 5:
 		print("Upgrading...")
 	else:
 		print("No command found.")
+
