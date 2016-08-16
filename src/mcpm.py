@@ -27,7 +27,8 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 			data = csv.DictReader(packagelist, delimiter=',')
 			for row in data:
 				#print(row['pkg'], row['version'], row['link'])
-				if sys.argv[2] == row['pkg']:
+				#if sys.argv[2] == row['pkg']:
+				if row['pkg'] == sys.argv[2]:
 					print("Package '" + sys.argv[2] + "' found!")
 					print(row['link'])
 					urllib.request.urlretrieve(row['link'], row['pkg'])
