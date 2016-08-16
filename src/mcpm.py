@@ -28,15 +28,15 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 				#print(row['pkg'], row['version'], row['link'])
 				if sys.argv[2] == row['pkg']:
 					print("Package '" + sys.argv[2] + "' found!")
+					print(row['link'])
 					break
 				elif row['pkg'] == "EOF":
-					print("Package '" + sys.argv[2] + "'not in list.")
+					print("Package '" + sys.argv[2] + "' is not in the list.")
 					break
 				else:
-					#useless.
-					print("ERROR OCCURED.")
-					break
-					#pass
+					#print("ERROR OCCURED.")
+					#break
+					pass
 
 
 	elif sys.argv[1] == "update":
