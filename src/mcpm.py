@@ -3,8 +3,15 @@ import sys
 import csv
 import os.path
 
-print("MC Package Manager")
-if len(sys.argv) > 1 and len(sys.argv) < 5:
+helpmessage = """Usage:
+
+install <package name>
+remove <package name>
+update
+upgrade
+"""
+
+if len(sys.argv) > 1 and len(sys.argv) <= 3:
 
 
 
@@ -15,16 +22,20 @@ if len(sys.argv) > 1 and len(sys.argv) < 5:
 			pass
 		else:
 			print("Package list not found. Do something")
-		#load csv
 		with open('pkglist.csv') as packagelist:
 			data = csv.DictReader(packagelist, delimiter=',')
 			for row in data:
 				#print(row['pkg'], row['version'], row['link'])
-				if sys.argv[2] in row['pkg']:
-					print("Package found!")
+				if sys.argv[2] == row['pkg']:
+					print("Package '" + sys.argv[2] + "' found!")
+					break
+				elif row['pkg'] == "EOF":
+					print("Package '" + sys.argv[2] + "'not in list.")
+					break
 				else:
 					#useless.
-					print("Not found.")
+					print("ERROR OCCURED.")
+					break
 					#pass
 
 
@@ -45,4 +56,6 @@ if len(sys.argv) > 1 and len(sys.argv) < 5:
 		print("Upgrading...")
 	else:
 		print("No command found.")
+else:
+	print(helpmessage)
 
