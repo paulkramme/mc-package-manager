@@ -2,6 +2,7 @@
 import sys
 import csv
 import os.path
+import urllib.request
 
 helpmessage = """Usage:
 
@@ -29,6 +30,7 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 				if sys.argv[2] == row['pkg']:
 					print("Package '" + sys.argv[2] + "' found!")
 					print(row['link'])
+					urllib.request.urlretrieve(row['link'], row['pkg'])
 					break
 				elif row['pkg'] == "EOF":
 					print("Package '" + sys.argv[2] + "' is not in the list.")
