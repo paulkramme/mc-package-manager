@@ -9,10 +9,9 @@ helpmessage = """Usage:
 install <package name>
 remove <package name>
 update
-upgrade
-"""
+upgrade"""
 
-if len(sys.argv) > 1 and len(sys.argv) <= 3:
+if len(sys.argv) >= 2 and len(sys.argv) <= 3:
 
 
 
