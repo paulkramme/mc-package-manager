@@ -33,12 +33,11 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 					print(row['link'])
 					urllib.request.urlretrieve(row['link'], row['pkg'])
 					break
+
 				elif row['pkg'] == "EOF":
 					print("Package '" + sys.argv[2] + "' is not in the list.")
 					break
 				else:
-					#print("ERROR OCCURED.")
-					#break
 					pass
 
 
