@@ -16,7 +16,6 @@ if len(sys.argv) >= 2 and len(sys.argv) <= 3:
 
 
 	if sys.argv[1] == "install":
-		#iterating through mod list
 		print("Installing...")
 		if os.path.isfile("pkglist.csv") == True:
 			pass
@@ -59,4 +58,3 @@ if len(sys.argv) >= 2 and len(sys.argv) <= 3:
 		print("No command found.")
 else:
 	print(helpmessage)
-
