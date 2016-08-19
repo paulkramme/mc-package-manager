@@ -47,7 +47,6 @@ if len(sys.argv) >= 2 and len(sys.argv) <= 3:
 		else:
 			#download package list...
 			print("Package list not found. Downloading...")
-			#blabla
 
 
 				
