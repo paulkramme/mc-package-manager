@@ -9,15 +9,13 @@ helpmessage = """Usage:
 install <package name>
 remove <package name>
 update
-upgrade
-"""
+upgrade"""
 
-if len(sys.argv) > 1 and len(sys.argv) <= 3:
+if len(sys.argv) >= 2 and len(sys.argv) <= 3:
 
 
 
 	if sys.argv[1] == "install":
-		#iterating through mod list
 		print("Installing...")
 		if os.path.isfile("pkglist.csv") == True:
 			pass
@@ -33,12 +31,11 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 					print(row['link'])
 					urllib.request.urlretrieve(row['link'], row['pkg'])
 					break
+
 				elif row['pkg'] == "EOF":
 					print("Package '" + sys.argv[2] + "' is not in the list.")
 					break
 				else:
-					#print("ERROR OCCURED.")
-					#break
 					pass
 
 
@@ -50,7 +47,6 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 		else:
 			#download package list...
 			print("Package list not found. Downloading...")
-			#blabla
 
 
 				
@@ -61,4 +57,3 @@ if len(sys.argv) > 1 and len(sys.argv) <= 3:
 		print("No command found.")
 else:
 	print(helpmessage)
-
